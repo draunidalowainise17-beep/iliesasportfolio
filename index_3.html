@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rev. Iliesa Tagilo &mdash; Vice Principal, Methodist Lay Training College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A1F3B;
+    --blue:#2453D9;
+    --blue-bright:#3B6BFF;
+    --blue-pale:#EAF0FF;
+    --paper:#FAF9F6;
+    --gold:#B8862F;
+    --ink:#12202E;
+    --ink-soft:#4B5A6B;
+    --line:#C7D4EA;
+    --grid: rgba(36,83,217,0.07);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; letter-spacing:-0.01em;}
+  .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--blue);
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(250,249,246,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    max-width:1120px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px;
+  }
+  .brand{font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem; color:var(--navy);}
+  .brand span{color:var(--blue);}
+  .navlinks{display:flex; gap:28px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; letter-spacing:0.04em;}
+  .navlinks a{text-decoration:none; color:var(--ink-soft); transition:color .2s;}
+  .navlinks a:hover{color:var(--blue);}
+  @media (max-width:640px){ .navlinks{display:none;} }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:var(--navy);
+    color:#fff;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(59,107,255,0.14) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,107,255,0.14) 1px, transparent 1px);
+    background-size:40px 40px;
+    mask-image: radial-gradient(ellipse 100% 80% at 30% 20%, black 40%, transparent 85%);
+  }
+  .hero-inner{
+    position:relative;
+    max-width:1120px; margin:0 auto;
+    display:grid; grid-template-columns:1.15fr 0.85fr;
+    gap:40px;
+    align-items:center;
+    padding:96px 28px 84px;
+  }
+  @media (max-width:860px){ .hero-inner{grid-template-columns:1fr; padding:64px 24px 56px;} }
+
+  .hero-eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.74rem; letter-spacing:0.16em; text-transform:uppercase;
+    color:#8FB0FF; margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .hero-eyebrow::before{content:""; width:22px; height:1px; background:#8FB0FF;}
+
+  .hero h1{
+    font-size:clamp(2.3rem, 5vw, 3.6rem);
+    line-height:1.05;
+    color:#fff;
+    margin-bottom:18px;
+  }
+  .hero h1 em{ font-style:italic; color:#9FB9FF; }
+  .hero p.tagline{
+    font-size:1.05rem;
+    color:#C7D4EA;
+    max-width:46ch;
+    margin-bottom:34px;
+  }
+
+  .stat-row{
+    display:flex; gap:0;
+    border-top:1px solid rgba(255,255,255,0.18);
+  }
+  .stat{
+    flex:1;
+    padding:16px 18px 0 0;
+    border-right:1px solid rgba(255,255,255,0.18);
+  }
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:'Fraunces', serif; font-size:1.7rem; color:#fff; font-weight:600;}
+  .stat .cap{font-family:'IBM Plex Mono', monospace; font-size:0.65rem; letter-spacing:0.08em; text-transform:uppercase; color:#8FA9E0; margin-top:4px;}
+
+  /* Blueprint-framed portrait */
+  .frame-wrap{ position:relative; }
+  .frame{
+    position:relative;
+    border:1px solid rgba(143,176,255,0.5);
+    padding:14px;
+  }
+  .frame::before, .frame::after,
+  .frame-wrap .corner-tl, .frame-wrap .corner-br{
+    content:""; position:absolute; width:18px; height:18px;
+    border-color:#9FB9FF; border-style:solid;
+  }
+  .corner-tl{top:-1px; left:-1px; border-width:2px 0 0 2px;}
+  .corner-br{bottom:-1px; right:-1px; border-width:0 2px 2px 0;}
+  .frame img{
+    filter:saturate(1.02) contrast(1.02);
+    width:100%;
+  }
+  .dim-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.62rem; letter-spacing:0.08em;
+    color:#8FA9E0;
+    position:absolute;
+    text-transform:uppercase;
+  }
+  .dim-top{ top:-24px; left:14px; }
+  .dim-bottom{ bottom:-26px; right:14px; text-align:right; }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding:88px 28px; }
+  .wrap{ max-width:1120px; margin:0 auto; }
+  .section-head{ margin-bottom:48px; max-width:60ch; }
+  .section-head .label{ margin-bottom:12px; display:block; }
+  .section-head h2{ font-size:clamp(1.7rem, 3vw, 2.3rem); color:var(--navy); }
+
+  /* ---------- ABOUT ---------- */
+  .about{ background:var(--blue-pale); }
+  .about-grid{
+    display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:start;
+  }
+  @media (max-width:800px){ .about-grid{grid-template-columns:1fr;} }
+  .about p{ color:var(--ink-soft); margin-bottom:16px; font-size:1.02rem; }
+  .pull{
+    font-family:'Fraunces', serif; font-style:italic;
+    font-size:1.5rem; line-height:1.4; color:var(--navy);
+    border-left:3px solid var(--blue);
+    padding-left:22px;
+  }
+
+  /* ---------- EDUCATION CARDS ---------- */
+  .cards{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media (max-width:700px){ .cards{grid-template-columns:1fr;} }
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    padding:30px 28px;
+    position:relative;
+  }
+  .card .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:0.65rem; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--blue); margin-bottom:14px; display:inline-block;
+    border:1px solid var(--blue); padding:3px 9px;
+  }
+  .card h3{ font-size:1.25rem; color:var(--navy); margin-bottom:6px; }
+  .card .school{ color:var(--ink-soft); font-size:0.92rem; margin-bottom:14px; }
+  .card p{ color:var(--ink-soft); font-size:0.95rem; }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{ position:relative; padding-left:34px; }
+  .timeline::before{
+    content:""; position:absolute; left:6px; top:6px; bottom:6px; width:1px;
+    background-image:linear-gradient(var(--blue) 60%, transparent 0%);
+    background-size:1px 8px;
+  }
+  .t-item{ position:relative; padding-bottom:44px; }
+  .t-item:last-child{ padding-bottom:0; }
+  .t-item::before{
+    content:""; position:absolute; left:-34px; top:2px;
+    width:13px; height:13px; border-radius:50%;
+    background:var(--paper); border:2px solid var(--blue);
+  }
+  .t-item .yr{ font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--blue); letter-spacing:0.06em; margin-bottom:6px; display:block;}
+  .t-item h3{ font-size:1.1rem; color:var(--navy); margin-bottom:4px; }
+  .t-item p{ color:var(--ink-soft); font-size:0.95rem; max-width:60ch; }
+
+  /* ---------- ACHIEVEMENTS ---------- */
+  .achieve{ background:var(--navy); color:#fff; }
+  .achieve .section-head h2{ color:#fff; }
+  .achieve .section-head p{ color:#AFC3EE; margin-top:10px; }
+  .achieve-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  @media (max-width:860px){ .achieve-grid{grid-template-columns:1fr;} }
+  .a-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(143,176,255,0.28);
+    padding:28px 24px;
+  }
+  .a-card .num{ font-family:'Fraunces', serif; font-size:1.6rem; color:#9FB9FF; margin-bottom:14px; }
+  .a-card h3{ font-size:1.08rem; color:#fff; margin-bottom:10px; }
+  .a-card p{ color:#C7D4EA; font-size:0.92rem; }
+
+  /* ---------- CONTACT ---------- */
+  .contact{ background:var(--paper); }
+  .contact-box{
+    background:#fff; border:1px solid var(--line);
+    padding:48px 44px;
+    display:grid; grid-template-columns:1fr auto; gap:30px; align-items:center;
+  }
+  @media (max-width:700px){ .contact-box{grid-template-columns:1fr; text-align:left;} }
+  .contact-box h2{ color:var(--navy); font-size:1.7rem; margin-bottom:10px; }
+  .contact-box p{ color:var(--ink-soft); max-width:48ch; }
+  .btn{
+    font-family:'IBM Plex Mono', monospace; font-size:0.8rem; letter-spacing:0.06em; text-transform:uppercase;
+    background:var(--blue); color:#fff; text-decoration:none;
+    padding:15px 26px; white-space:nowrap;
+    border:1px solid var(--blue); transition:all .2s;
+  }
+  .btn:hover{ background:transparent; color:var(--blue); }
+
+  footer{
+    padding:30px 28px; text-align:center;
+    font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
+    color:var(--ink-soft); border-top:1px solid var(--line);
+  }
+
+  /* reveal on scroll */
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.visible{ opacity:1; transform:translateY(0); }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Rev. Iliesa Tagilo<span>.</span></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#journey">Journey</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Methodist Lay Training College &middot; Davuilevu, Nausori</div>
+      <h1>Building the <em>structures</em><br>that carry a ministry.</h1>
+      <p class="tagline">Rev. Iliesa Tagilo is Vice Principal of the Methodist Lay Training College &mdash; an engineer by training and a minister by calling, who has spent over a decade shaping how the college teaches, and how it is built to last.</p>
+      <div class="stat-row">
+        <div class="stat"><div class="num">12+</div><div class="cap">Years at MLTC</div></div>
+        <div class="stat"><div class="num">2</div><div class="cap">Degrees earned</div></div>
+        <div class="stat"><div class="num">2022</div><div class="cap">School registered</div></div>
+        <div class="stat"><div class="num">2</div><div class="cap">Curricula built</div></div>
+      </div>
+    </div>
+    <div class="frame-wrap">
+      <span class="dim-label dim-top">Rev. Iliesa Tagilo &mdash; Vice Principal</span>
+      <div class="frame">
+        <span class="corner-tl"></span><span class="corner-br"></span>
+        <img src="data:image/jpeg;base64,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" alt="Portrait of Rev. Iliesa Tagilo">
+      </div>
+      <span class="dim-label dim-bottom">Methodist Church of Fiji</span>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <span class="label">About</span>
+      <h2>Two vocations, one discipline.</h2>
+    </div>
+    <div class="reveal">
+      <p>At 51, Rev. Iliesa Tagilo carries two very different formations into one calling. He trained first as a mechanical engineer at the University of the South Pacific, learning to think in systems, tolerances, and structures &mdash; and later answered a call to ministry, completing a Master of Divinity in preparation for pastoral and theological leadership.</p>
+      <p>For over twelve years he has served the Methodist Lay Training College in Davuilevu, Nausori, now as Vice Principal alongside Rev. Rusiate Tuidrakulu, the college's Principal. That engineer's instinct for building things that hold together shows up in his ministry work too: in institutional systems he has strengthened, and in curricula he has designed from the ground up.</p>
+      <p class="pull">"He builds what the college stands on &mdash; its structure, its standing, and what it teaches."</p>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="label">Education &amp; Formation</span>
+      <h2>Trained to build. Called to serve.</h2>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <span class="tag">BSc &middot; Engineering</span>
+        <h3>Bachelor of Science, Mechanical Engineering</h3>
+        <div class="school">University of the South Pacific (USP)</div>
+        <p>A technical foundation in systems, design, and structural thinking &mdash; the same discipline he later brought to strengthening an institution.</p>
+      </div>
+      <div class="card reveal">
+        <span class="tag">MDiv &middot; Ministry</span>
+        <h3>Master of Divinity</h3>
+        <div class="school">Theological Studies</div>
+        <p>Graduate formation in theology and pastoral leadership, equipping him for ministry and for shaping how the next generation of lay leaders are trained.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="journey">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="label">Journey</span>
+      <h2>Twelve years at MLTC.</h2>
+    </div>
+    <div class="timeline">
+      <div class="t-item reveal">
+        <span class="yr">Foundation</span>
+        <h3>Mechanical Engineering, USP</h3>
+        <p>Completed a Bachelor of Science in Mechanical Engineering at the University of the South Pacific.</p>
+      </div>
+      <div class="t-item reveal">
+        <span class="yr">Formation</span>
+        <h3>Master of Divinity</h3>
+        <p>Pursued graduate theological study, preparing for pastoral ministry within the Methodist Church of Fiji.</p>
+      </div>
+      <div class="t-item reveal">
+        <span class="yr">~2014 &mdash; Present</span>
+        <h3>Joins Methodist Lay Training College</h3>
+        <p>Begins service at MLTC in Davuilevu, Nausori &mdash; now in his twelfth year at the institution.</p>
+      </div>
+      <div class="t-item reveal">
+        <span class="yr">2022</span>
+        <h3>Leads the school's official registration</h3>
+        <p>Worked through the registration process that formally established the school's standing.</p>
+      </div>
+      <div class="t-item reveal">
+        <span class="yr">Ongoing</span>
+        <h3>Vice Principal, MLTC</h3>
+        <p>Serves alongside the Principal in the overall leadership and direction of the college.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="achieve" id="achievements">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="label">Achievements</span>
+      <h2>What he's built at MLTC</h2>
+      <p>Institutional and academic work that has shaped the college's foundation and its teaching.</p>
+    </div>
+    <div class="achieve-grid">
+      <div class="a-card reveal">
+        <div class="num">01</div>
+        <h3>School Registration &mdash; 2022</h3>
+        <p>Worked out the formal registration of the Methodist Lay Training College, securing its standing as a recognised institution.</p>
+      </div>
+      <div class="a-card reveal">
+        <div class="num">02</div>
+        <h3>Lay Ministry Curriculum</h3>
+        <p>Designed a new curriculum for the college's Lay Ministry programme, shaping how lay leaders are trained.</p>
+      </div>
+      <div class="a-card reveal">
+        <div class="num">03</div>
+        <h3>Early Childhood Education Curriculum</h3>
+        <p>Developed a new curriculum for the college's Early Childhood Education programme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <div>
+        <h2>Get in touch</h2>
+        <p>For enquiries about the Methodist Lay Training College or its programmes, reach out to the college directly.</p>
+      </div>
+      <a class="btn" href="https://mltcfiji.com" target="_blank" rel="noopener">Visit MLTC &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Rev. Iliesa Tagilo &middot; Vice Principal, Methodist Lay Training College &middot; Davuilevu, Nausori, Fiji
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
